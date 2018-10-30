@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Anelya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!--Font-->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&amp;subset=latin-ext" rel="stylesheet">
+  <!--FontAwesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <!--Vue.JS CDM -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body style="font-family: 'Pacifico', cursive !important;">
+  <div id="app">
+
+    <section class="setting" style="margin-top:20px !important;background-color:white !important">
+      <div class="container d-flex justify-content-center align-items-center" style="margin-left:auto !important">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+              <h2 style="margin-bottom:20px">Anelya</h2>
+              
+            <button @click="setting"><i class="fas fa-cogs"></i><br>Settings</button>
+            <button><i class="fab fa-github"></i><br>GitHub</button>
+            <button><i class="fab fa-instagram"></i><br>Instgram</button>
+            <button><i class="fab fa-twitter"></i><br> Twitter</button>
+            <button><i class="fab fa-facebook-f"></i><br> Facebook</button>
+     
+         </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <section class="anelya" style="margin-top:100px;">
+      <div class="container d-flex justify-content-center align-items-center">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <img :src="anelyaPhoto" alt="Anleya" height="100" width="100" style="display:block; margin: auto !important" id="anelyaEffect">
+            <input type="text" id="" v-model="searchValue">
+            <button @click="search" style="  margin-left: 10px !important; ">Uygula</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Setting-->
+    <section class="settings" style="margin-top:30px" v-if="settingPanel">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 text-center">
+            <!--Facebook-->
+            <div class="card text-center">
+                <div class="card-body">
+                  <h2 class="card-title"><i class="fab fa-facebook-f"></i></h2>
+                  <p class="card-text">Facebook Link</p>
+                  <input  id="facebooLinkSettings"  type="text" style="margin-bottom:20px;">
+                  <br>
+                  <button @click="facebookLinklUpdate">Uygula</button>
+                </div>
+              </div>
+
+          </div>
+          <div class="col-sm-3 text-center">
+            <!--Twiitter-->
+
+            <div class="card text-center">
+                <div class="card-body">
+                  <h2 class="card-title"><i class="fab fa-twitter"></i></h2>
+                  <p class="card-text">Twitter Link</p>
+                  <input  type="text" style="margin-bottom:20px;" >
+                  <br>
+                  <button>Uygula</button>
+                </div>
+              </div>
+
+          </div>
+          <div class="col-sm-3 text-center">
+            <!--Youtube-->
+
+            <div class="card text-center">
+                <div class="card-body">
+                  <h2 class="card-title"><i class="fab fa-youtube"></i></h2>
+                  <p class="card-text">Youtube Link</p>
+                  <input  id="youtubeLinkSettings" type="text" style="margin-bottom:20px;">
+                  <br>
+                  <button @click="youtubeLinkUpdate">Uygula</button>
+                </div>
+              </div>
+
+          </div>
+          <div class="col-sm-3 text-center">
+            <!--Playlist-->
+            
+            <div class="card text-center">
+                <div class="card-body">
+                  <h2 class="card-title"><i class="fas fa-music"></i></h2>
+                  <p class="card-text">PlayList Link</p>
+                  <input id="youtubePlayListLinkSettings" type="text" style="margin-bottom:20px;">
+                  <br>
+                  <button @click="youtubePlaylistLinkUpdate">Uygula</button>
+                 
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!--Bootstrap JS-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<!--Vue.JS-->
+
+<script src="app.js"></script>
+
+</body>
+</html>

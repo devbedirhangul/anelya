@@ -29,8 +29,24 @@
             <button><i class="fab fa-instagram"></i><br>Instgram</button>
             <button><i class="fab fa-twitter"></i><br> Twitter</button>
             <button><i class="fab fa-facebook-f"></i><br> Facebook</button>
-     
-         </div>
+            
+            <br>
+            <button style="margin-top:20px;" @click="commandDiv = !commandDiv"><i class="fas fa-terminal"></i><br> Temel Komutlar</button>
+            
+            <div class="card text-center" style="margin-top:20px;" v-if="commandDiv">
+              <div class="card-body">
+                <h5 class="card-title">Komutlar</h5>
+                <p> <b>!f</b> => Facebook'a gitme</p>
+                <p> <b>!t</b> => Twitter'a gitme</p>
+                <p> <b>!y</b> => YouTube'a gitme</p>
+                <p> <b>!p</b> => Playlist oynatma</p>
+
+                <br>
+                <button @click="commandDiv = false">Kapat</button>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
@@ -43,7 +59,7 @@
           <div class="col-sm-12 text-center">
             <img :src="anelyaPhoto" alt="Anleya" height="100" width="100" style="display:block; margin: auto !important" id="anelyaEffect">
             <input type="text" id="" v-model="searchValue">
-            <button @click="search" style="  margin-left: 10px !important; ">Uygula</button>
+            <button @keyup.enter="search" @click="search" style="  margin-left: 10px !important; ">Uygula</button>
           </div>
         </div>
       </div>
@@ -59,7 +75,7 @@
                 <div class="card-body">
                   <h2 class="card-title"><i class="fab fa-facebook-f"></i></h2>
                   <p class="card-text">Facebook Link</p>
-                  <input  id="facebooLinkSettings"  type="text" style="margin-bottom:20px;">
+                  <input  v-model='facebooLinkSettings' id="facebooLinkSettings"  type="text" style="margin-bottom:20px;">
                   <br>
                   <button @click="facebookLinklUpdate">Uygula</button>
                 </div>
@@ -73,9 +89,9 @@
                 <div class="card-body">
                   <h2 class="card-title"><i class="fab fa-twitter"></i></h2>
                   <p class="card-text">Twitter Link</p>
-                  <input  type="text" style="margin-bottom:20px;" >
+                  <input  v-model="twitterLinkSettings" type="text" style="margin-bottom:20px;" >
                   <br>
-                  <button>Uygula</button>
+                  <button @click="twitterLinkUpdate">Uygula</button>
                 </div>
               </div>
 
@@ -87,7 +103,7 @@
                 <div class="card-body">
                   <h2 class="card-title"><i class="fab fa-youtube"></i></h2>
                   <p class="card-text">Youtube Link</p>
-                  <input  id="youtubeLinkSettings" type="text" style="margin-bottom:20px;">
+                  <input  v-model="youtubeLinkSettings" id="youtubeLinkSettings" type="text" style="margin-bottom:20px;">
                   <br>
                   <button @click="youtubeLinkUpdate">Uygula</button>
                 </div>
@@ -101,7 +117,7 @@
                 <div class="card-body">
                   <h2 class="card-title"><i class="fas fa-music"></i></h2>
                   <p class="card-text">PlayList Link</p>
-                  <input id="youtubePlayListLinkSettings" type="text" style="margin-bottom:20px;">
+                  <input v-model="youtubePlayListLinkSettings" id="youtubePlayListLinkSettings" type="text" style="margin-bottom:20px;">
                   <br>
                   <button @click="youtubePlaylistLinkUpdate">Uygula</button>
                  

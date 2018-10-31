@@ -3,10 +3,16 @@ new Vue({
   data: {
     settingPanel : false,
     facebookLink : 'https://www.facebook.com',
+    facebooLinkSettings :'',
     youtubeLink : 'https://www.youtube.com',
+    youtubeLinkSettings :'',
     youtubePlaylistLink: 'https://www.youtube.com/watch?v=F1oHBcTdKL4&list=PLkLimRXN6NKyOOVAqgfHWns1ICNiGXgOd',
+    youtubePlayListLinkSettings : '',
     anelyaPhoto : 'img/logo.png',
     searchValue : '',
+    twitterLink : 'https://twitter.com',
+    twitterLinkSettings : '',
+    commandDiv : false
     
     
   },
@@ -22,29 +28,26 @@ new Vue({
       }
       else if(this.searchValue === '!p'){
         window.open(this.youtubePlaylistLink);
+      }else if(this.searchValue === '!t'){
+        window.open(this.twitterLink);
       }
-      
-  
-      
       else{
         
       }
     },
     facebookLinklUpdate : function(){
-      
-      var x = document.getElementById('facebooLinkSettings').value;
-      this.facebookLink = x;
+      this.facebookLink = this.facebooLinkSettings;
     },
+    twitterLinkUpdate : function(){
+      this.twitterLink = this.twitterLinkSettings;
+    },  
     youtubeLinkUpdate : function(){
-      
-      var x = document.getElementById('youtubeLinkSettings').value;
-      this.youtubeLink = x;
+      this.youtubeLink = this.youtubeLinkSettings;
     },
     youtubePlaylistLinkUpdate : function(){
-      var x = document.getElementById('youtubePlayListLinkSettings').value;
-      this.youtubePlaylistLink = x;
-     
+      this.youtubePlaylistLink = this.youtubePlayListLinkSettings;
     },
+   
     
    
   },
